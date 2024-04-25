@@ -19,6 +19,9 @@ sudo dnf install python3 python3-pip
 
 Il faut aussi intaller Django pour ce workshop.
 Django est un framework de développement Web open-source écrit en Python https://docs.djangoproject.com/fr/ .
+https://docs.djangoproject.com/en/5.0/
+https://realpython.com/tutorials/django/
+
 ```
 pip3 install django
 ```
@@ -43,21 +46,66 @@ python manage.py startapp tasks
 Pour créer une nouvelle application Django nommée "tasks".
 
 3. Définition d'un modèle de tâche dans un fichier models.py (suggestion)
+
 C'est quoi le modèle de tâche ?
 Le modèle de tâche est une représentation de la structure des données d'une tâche dans la base de données.
 https://docs.djangoproject.com/fr/3.2/topics/db/models/
 
 4. Création de "vues" dans un fichier urls.py (suggestion)
+
 Afficher la liste des tâches, ajouter une nouvelle tâche, marquer une tâche comme complétée et supprimer une tâche.
 https://docs.djangoproject.com/fr/3.2/topics/http/views/
 
 5. Définition d'URL pour chaques vues dans un fichier urls.py (suggestion)
+
 Diriger/associer les requêtes vers les vues appropriées.
 https://docs.djangoproject.com/fr/3.2/topics/http/urls/
    
-6. Création de Templates :
-Créez des templates HTML pour afficher les différentes pages de l'application.
-Plusieurs possibilitées, 
+6. Création de Templates dans un dossier templates (suggestion)
+
+Créer des templates HTML pour afficher les différentes pages de l'application.
+Suggestion: un fichier html par vues.
+Plusieurs possibilitées: 
+- Utiliser des templates existantes spécialement conçus pour ce type d'application
+Vous pouvez en retrouver ici:
+https://adminlte.io/
+ou sur la plateforme Bootstrap avec SB Admin2
+ou même sur GitHub
+Sinon, vous pouvez créez le votre soit écrire votre propre fichier html.
+Exemple:
+```
+templates/
+├── contact_list.html
+├── contact_detail.html
+├── contact_form.html
+```
+contact_list.html = template pour afficher la liste des contacts.
+contact_detail.html = template pour afficher les détails d'un contact individuel.
+contact_form.html = template pour afficher le formulaire d'ajout/modification de contact.
+
+https://docs.djangoproject.com/fr/3.2/topics/templates/
+https://tutorial.djangogirls.org/en/template_extending/
+
+7. Intégration des templates avec les vues
+
+Intégration des données des vues aux templates.
+Dans vos vues Django, vous pouvez utiliser la fonction render pour renvoyer les templates HTML en réponse aux requêtes des utilisateurs. 
+Assurez-vous d'importer la fonction render depuis django.shortcuts.
+
+https://docs.djangoproject.com/fr/3.2/topics/templates/
+https://docs.djangoproject.com/fr/3.2/topics/http/shortcuts/#render
+
+8. C'est terminé
+Vous pouvez exécuter votre application en utilisant la commande
+```
+python manage.py runserver
+```
+Accédez à celle-ci via votre navigateur Web.
+
+
+
+
+
 
 
    
