@@ -75,13 +75,13 @@ Sinon, vous pouvez créez le votre soit écrire votre propre fichier html.
 Exemple:
 ```
 templates/
-├── contact_list.html
-├── contact_detail.html
-├── contact_form.html
+├── task_list.html
+├── task_detail.html
+├── task_form.html
 ```
-contact_list.html = template pour afficher la liste des contacts.
-contact_detail.html = template pour afficher les détails d'un contact individuel.
-contact_form.html = template pour afficher le formulaire d'ajout/modification de contact.
+task_list.html = template pour afficher la liste des tâches.
+task_detail.html = template pour afficher les détails d'une tâche individuelle.
+task_form.html = template pour afficher le formulaire d'ajout/modification/terminé de tâche.
 
 https://docs.djangoproject.com/fr/3.2/topics/templates/
 https://tutorial.djangogirls.org/en/template_extending/
