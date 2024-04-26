@@ -1,8 +1,8 @@
 # Introduction-developpement-Web-Python
 
-Bienvenue au Workshop dd'introduction au développment Web en Python.
+Bienvenue au Workshop d'introduction au développment Web en Python.
 
-D'abord, assurez-voous d'avoir Python d'installer sur votre ordinateur.
+D'abord, assurez-vous d'avoir Python d'installer sur votre ordinateur.
 Pour vérfier vous pouvez utiliser la ligne ci-dessus.
 ```
 python --version
@@ -12,7 +12,7 @@ ou
 python3 --version
 ```
 
-Si ce n'est pas le cas, vous pous l'installer avec la ligne suivante:
+Si ce n'est pas le cas, vous pouvez l'installer avec la ligne suivante:
 ```
 sudo dnf install python3 python3-pip
 ```
