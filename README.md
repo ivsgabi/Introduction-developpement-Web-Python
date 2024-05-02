@@ -97,11 +97,13 @@ https://docs.djangoproject.com/fr/3.2/topics/templates/
 https://docs.djangoproject.com/fr/3.2/topics/http/shortcuts/#render
 
 8. Sécuriser l'application
+
 On pourrait s'arrêter là et passer directement à la dernière étape en accédant à l'application Web, mais si vous avez le temps, il est intéressant de sécuriser l'application et son accéssibilité.
 
 a. Ajout de l'Authentification Utilisateur
 
-- Configuration des paramètres d'authentification:
+- Configuration des paramètres d'authentification
+
 Dans le fichier settings.py généré par Django, assurez-vous que les paramètres d'authentification sont correctement configurés. Vous pouvez vérifier que django.contrib.auth est inclus dans INSTALLED_APPS et que django.contrib.auth.urls est inclus dans vos URLs.
 https://docs.djangoproject.com/fr/3.2/topics/auth/
 https://docs.djangoproject.com/fr/3.2/ref/settings/#auth
@@ -116,18 +118,21 @@ urlpatterns = [
 
 ```
 - Création des vues d'authentification
+
 Créer des vues pour l'inscription, la connexion et la déconnexion des utilisateurs. 
 Vous pouvez utiliser les vues fournies par Django dans django.contrib.auth.views, ou créer vos propres vues personnalisées si nécessaire.
 https://docs.djangoproject.com/fr/3.2/topics/auth/default/#module-django.contrib.auth.views
 https://realpython.com/lessons/implement-view-auth/
 
 - Création des templates d'authentification
+
 Créer des templates HTML pour les pages d'inscription, de connexion et de déconnexion.
 Même processus que l'étape 6.
 Exemple de template d'authentification: https://github.com/django/django/tree/main/django/contrib/auth/templates/registration
 https://docs.djangoproject.com/fr/3.2/topics/auth/default/#module-django.contrib.auth.views
 
 - Intégration des urls d'authentification
+
 Intégrer les urls des vues d'authentification dans votre fichier urls.py principal pour les rendre accessibles aux utilisateurs.
 https://docs.djangoproject.com/fr/3.2/topics/auth/default/#module-django.contrib.auth.views
 ```
@@ -137,9 +142,11 @@ urlpatterns = [
 ```
 Exemple de configuration d'urls d'authentification dans un fichier urls.py:
 https://github.com/django/django/tree/main/django/contrib/auth/templates/registration
+
 b. Rendre l'application accessible uniquement aux utilisateurs authentifiés.
 
 - Utilisation de "décorateurs de vue"
+
 Utiliser les décorateurs de vue fournis par Django, tels que login_required, pour restreindre l'accès à certaines vues uniquement aux utilisateurs authentifiés.
 https://docs.djangoproject.com/fr/3.2/topics/auth/default/#the-login-required-decorator
 ```
@@ -149,7 +156,8 @@ from django.contrib.auth.decorators import login_required
 def my_secure_view(request):
     ...
 ```
-- Configuration des Permissions
+- Configuration des permissions
+  
 Utiliser le système de permissions de Django pour définir des autorisations spécifiques pour les utilisateurs authentifiés.
 Il est possible de définir des permissions au niveau de l'utilisateur ou d'un groupe d'utilisateurs.
 https://docs.djangoproject.com/fr/3.2/topics/auth/default/#permissions-and-authorization
