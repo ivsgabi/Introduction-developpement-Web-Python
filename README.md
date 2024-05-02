@@ -167,7 +167,7 @@ Vous pouvez exécuter votre application en utilisant la commande
 ```
 python manage.py runserver
 ```
-Accédez à celle-ci via votre navigateur Web.
+Accéder à celle-ci via votre navigateur Web.
 
 
 
