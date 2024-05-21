@@ -97,7 +97,7 @@ Assurez-vous d'importer la fonction render depuis django.shortcuts.
 https://docs.djangoproject.com/fr/3.2/topics/templates/
 https://docs.djangoproject.com/fr/3.2/topics/http/shortcuts/#render
 
-9. C'est terminé
+8. C'est terminé
 Vous pouvez exécuter votre application en utilisant la commande
 ```
 python manage.py runserver
