@@ -39,6 +39,7 @@ Objectif : Créer une application Web de liste de tâches où les utilisateurs p
 django-admin startproject nom_de_votre_projet
 ```
 Pour créer un nouveau projet Django.
+Il faut ensuite se troouver dans le dossier créé pour exécuter la ligne suivante.
 
 2. Création d'une application Django
 ```
@@ -46,18 +47,18 @@ python manage.py startapp tasks
 ```
 Pour créer une nouvelle application Django nommée "tasks".
 
-3. Définition d'un modèle de tâche dans un fichier models.py (suggestion)
+3. Définition d'un modèle de tâche dans le fichier models.py
 
 C'est quoi le modèle de tâche ?
 Le modèle de tâche est une représentation de la structure des données d'une tâche dans la base de données.
 https://docs.djangoproject.com/fr/3.2/topics/db/models/
 
-4. Création de "vues" dans un fichier urls.py (suggestion)
+4. Création de "vues" dans le fichier urls.py
 
 Afficher la liste des tâches, ajouter une nouvelle tâche, marquer une tâche comme complétée et supprimer une tâche.
 https://docs.djangoproject.com/fr/3.2/topics/http/views/
 
-5. Définition d'URL pour chaques vues dans un fichier urls.py (suggestion)
+5. Définition d'URL pour chaques vues dans le fichier urls.py
 
 Diriger/associer les requêtes vers les vues appropriées.
 https://docs.djangoproject.com/fr/3.2/topics/http/urls/
