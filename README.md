@@ -34,10 +34,11 @@ django-admin --version
 Création d'une application de gestion de tâches avec Django
 Objectif : Créer une application Web de liste de tâches où les utilisateurs peuvent ajouter, supprimer et marquer les tâches comme complétées.
 
-1. Création d'un projet Django
+1. Démarrage django
 ```
-django-admin startproject nom_de_votre_projet
+django-admin startproject Todo
 ```
+<<<<<<< HEAD
 Pour créer un nouveau projet Django.
 Il faut ensuite se troouver dans le dossier créé pour exécuter la ligne suivante.
 
@@ -99,15 +100,60 @@ https://docs.djangoproject.com/fr/3.2/topics/http/shortcuts/#render
 
 8. C'est terminé
 Vous pouvez exécuter votre application en utilisant la commande
+=======
+Cette commande va créer un dossier. Après avoir fait un cd Todo, on peut utiliser la ligner suivant pour créer un nouveau projet Django du nom de Todo.
+
+```
+django-admin startapp todolist
+```
+
+2. Installation des prerequites de l'application
+
+- Dans le dossier todolist, créez un dossier nommé "templates".
+- Remplacez le fichier settings.py existant créer par Django par le fichier du même nom dans ce ripo.
+- Dans le dossier todolist, créer un dossier nommé "static". Ce dossier contiendra les fichiers .css nécéssaires (javascript).
+- Dans le dossier todolist créez un fichier urls.py même s'il y en a déjà un généré par Django dans le dossier Todo (on va l'inclure dedans).
+- Copier le fichier views.py du ripo dans celui de votre dossier. N'oubliez pas d'ajouter les includes nécéssaires.
+- Dans votre terminal:
+```
+python manage.py migrate
+python manage.py createsuperuser
+```
+Attention, il faudra se souvenir des informations que vous donnez plus tard.
+
+>>>>>>> db7514f (Update READ.md (unfinished))
 ```
 python manage.py runserver
 ```
-Accéder à celle-ci via votre navigateur Web.
+Si tout c'est bien passé, vous devriez avoir un lien à ouvrir sur Firefox spécifiquement et un message de félicitations pour une installation réussie.
 
+3. Démarrage de l'application
 
+- Dans le fichier urls.py créer dans le dossier todolist
+```
+from django.urls import path
+from . import views
 
+urlpatterns = [
+    path('', views.index, name='accueil')
+]
+```
+Cette partie associe la page d'accueil à la fonction index dans les vues.
+- Dans le fichier urls.py du dossier Todo (celui généré par Django), ajouter "include" à la fin de la ligne 17, elle devrait ressembler à ça maintenant:
 
+```
+from django.urls import path, include
+```
 
+Juste en dessous se trouve la liste des urls pattern, il y en a un relier à la partie admin, il faut en ajouter un pour le reste. Vous pouvez ajouter la ligne suivante à la liste urlpattern pour ça.
 
+```
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include(todolist.urls)),
+]
+```
 
-   
+Si vous recharger le serveur sur votre navigateur, vous devirez voir le message "Hello World!" s'afficher.
+Vous venez de définir votre première view.
+
