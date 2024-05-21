@@ -203,14 +203,12 @@ def update(request, my_id):
         form.save()
         return redirect('/') """pour rediriger vers une autre page"""
     return render(request, 'update.html', {'form': form })
-
 ```
 
 - Du coup, il faut ajouter cette nouvelle page à la liste d'urls de urlpatterns dans urls.py.
-
+- 
 ```
 path('/update', views.update, name='update') """vous aurez peut-être quelque chose à ajouter"""
-
 ```
 
 - Encore une fois vous pouvez vérifier du coté de l'application si tout est ok.
