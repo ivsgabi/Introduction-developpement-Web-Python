@@ -219,7 +219,7 @@ path('/update', views.update, name='update') """vous aurez peut-être quelque ch
 
 8. L'application est terminée.
 
-Vous pouvez désormais enregistrer vos tâches à faire, les modifier et les supprimer via votre ToDoList virtuelle.
+Vous pouvez désormais enregistrer vos tâches à faire, les modifier et les supprimer via votre application Web ToDoList.
 
 
 
