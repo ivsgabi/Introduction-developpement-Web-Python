@@ -65,7 +65,7 @@ Si tout c'est bien passé, vous devriez avoir un lien à ouvrir sur Firefox spé
 
 3. Démarrage de l'application
 
-- Dans le fichier urls.py créer dans le dossier todolist
+- Dans le fichier urls.py créer dans le  todolist
 ```
 from django.urls import path
 from . import views
@@ -97,7 +97,7 @@ Vous venez de définir votre première view.
 3. Utiliser sa première template
 
 - Dans ce ripo se trouve un dossier templates avec deux templates en html généré sur bootstrap, copiez les dans le dossier templates précedemment créé dans le dossier todolist.
-- Les dossier css et js aussi présents sur le ripo doivent être copié dans votre dossier static précédemment créé.
+- Les dossiers css et js aussi présents sur le ripo doivent être copié dans votre dossier static précédemment créé.
 - Les templates .html sont les pages qui apparaitront dans votre application.
 
 Maintenant, il faut les lier aux pages approprié.
