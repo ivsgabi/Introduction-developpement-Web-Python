@@ -87,7 +87,7 @@ Juste en dessous se trouve la liste des urls pattern, il y en a un relier à la 
 ```
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(todolist.urls)),
+    path('', include('todolist.urls'))
 ]
 ```
 
