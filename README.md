@@ -111,15 +111,6 @@ Dans le fichier ```todolist/views.py```, crée une fonction ```index``` retourna
 
 > Jettez un coup d'oeil à la classe [HttpResponse](https://docs.djangoproject.com/fr/5.0/ref/request-response/#httpresponse-objects) 👍
 
-<<<<<<< HEAD
-```
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('todolist.urls'))
-]
-```
-=======
->>>>>>> 6f9b987 (Update README.md)
 
 Après avoir créé la vue, il faut rendre la vue de ```todolist/views.py``` accessible depuis notre application.
 
@@ -200,79 +191,7 @@ from .models import Task
 admin.site.register(Task)
 ```
 
-<<<<<<< HEAD
-Et dans la section Task, vous verez les task créer précédemment dans le shell si vous en avez mises en place.
-
-6. Rendre la base de données "accessible"
-
-- Dans le dossier todolist, créez un fichier forms.py dans lequel vous devez mettre ceci:
-
-```
-from django.db.models import fields
-from .models import Task
-
-class FormTask(forms.ModelForm):
-    Tache = forms.CharField(max_length=500, widget=forms.TextInput(attrs={
-        'placeholder': 'Add your Task',
-        'class': 'form-control form-control-lg',
-    }))
-
-    class Meta:
-        model = Task
-        fields = ['Tache']
-```
-Cette partie crée un formulaire basé sur le modèle Task, avec un champ de texte pour Tache.
-
-- Dans le fichier views.py, pour pouvoir utiliser ectte forme de formulaire dans ce fichier, ajoutez:
-
-```
-from .forms import FormTask
-```
-
-Vous pouvez jeter un coup d'oeil à l'application pour vérifier que tout va bien.
-
-- Toujours dans le fichier views.py, le but est maintenant d'afficher un formulaire de la forme définie dans le fichier forms.py qui prendra donc en paramètre la requête de l'utilisateur.
-Si le formulaire est valide, on enregistre dans la base de données. Attention, il ne faut pas oublier de set un contexte pour les variables qu'on veut mettre en place dans la fonction index.
-
-- Pour vérifier si ça fonctionne, rendez-vous sur votre application Web, ajoutez une tâche et regardez si elle est ajouté dans la liste des taches du coté admin.
-
-7. Lister les tâches, les supprimer et les modifier
-
-- Pour que la liste de tache soit aussi visible sans le statut admin, on va afficher la base de données en faisant:
-```
-list = Task.objects.all() """ + context"""
-```
-
-- Pour modifier une tâche de la to do list, dans fichier views.py, déclarez une fonction update qui prend en paramètre une request (comme la fonction index) et un paramètre my_id. Cette fonction va gérer le bouton modifier. La fonction ressembla assez à la fonction index.
-Conseil: utiliser get_object_or_404()
-Elle devrait ressembler à ça sans les includes nécéssaires:
-
-```
-def update(request, my_id):
-    obj = Task.objects.get(id=my_id) """pour recupérer l'id de la tâche qu'on veut modifier"""
-    form = FormTask(request.POST or None, instance=obj)
-    if form.is_valid():
-        form.save()
-        return redirect('/') """pour rediriger vers une autre page"""
-    return render(request, 'update.html', {'form': form })
-```
-
-- Du coup, il faut ajouter cette nouvelle page à la liste d'urls de urlpatterns dans urls.py.
-- 
-```
-path('/update', views.update, name='update') """vous aurez peut-être quelque chose à ajouter"""
-```
-
-- Encore une fois vous pouvez vérifier du coté de l'application si tout est ok.
-
-- Pour supprimer une tâche, le principe est très proche de celui pour modifier, on vous laisse faire, bon courage et #bravo si vous êtes arrivé jusque là!
-
-8. L'application est terminée.
-
-Vous pouvez désormais enregistrer vos tâches à faire, les modifier et les supprimer via votre application Web ToDoList.
-=======
 Vous pouvez ensuite vous rendre à l'URL ```/admin``` pour voir que le modèle ```Task``` s'est bien créé, après avoir lancé votre application. En cliquant sur la section ```Task```, vous pourrez voir que la tâche "Zappy" s'est bien créée.
->>>>>>> 6f9b987 (Update README.md)
 
 
 ### Etape 4 - Ajouter une nouvelle tâche depuis l'application 📁
